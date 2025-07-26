@@ -100,15 +100,15 @@ The system fulfills the requirements of the AI Engineer (Level-1) Technical Asse
      ```bash
      python bangla_rag_system.py
      ```
-   - To query the LLM on your vscode terminal, run the on the terminal:
+   - To query the LLM on your VS Code terminal, run this in the terminal:
      ```bash
      python inference.py
      ```
-   - If you want to Launch the Streamlit app, and check the RAG system on the UI, then run this:
+   - If you want to launch the Streamlit app and check the RAG system on the UI, then run this:
      ```bash
      streamlit run app.py
      ```
-   You will see this UI. Submit your queries there, to get your answer:
+   You will see this UI. Submit your queries there to get your answer:
    ![Alt text](docs_and_images/app_ui.PNG)
 
    - If you want to run the API to interact with the RAG system, then run this:
@@ -116,23 +116,8 @@ The system fulfills the requirements of the AI Engineer (Level-1) Technical Asse
      ```bash
      uvicorn rag_api:app --host 0.0.0.0 --port 8000
      ```
-      You will find a brief explanation on how to run a query in the [API Documentation](#api-documentation) section.
+     You will find a brief explanation on how to run a query in the [API Documentation](#api-documentation) section.
 
-   When you see this message:
-
-    ```bash
-   INFO:     Started server process [7968]
-   INFO:     Waiting for application startup.
-   INFO:     Application startup complete.
-   INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-     ```
-
-   That means, your API is running. To check the API, go to this link:
-
-   http://127.0.0.1:8000/docs
-
-   Then follow the steps provided in this
-   [PDF](docs_and_images/Bengali%20RAG%20API%20-%20Swagger%20UI.pdf).
 
 ## Tools, Libraries, and Packages
 - **Python Libraries**:
@@ -229,11 +214,11 @@ INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 ```
 
-That means, your API is running. To check the API, go to this link:
+That means your API is running. To check the API, go to this link:
 http://127.0.0.1:8000/docs
 
 Then follow the steps provided in this 
-[pdf](docs_and_images/Bengali%20RAG%20API%20-Swagger%20UI.pdf).
+[PDF](docs_and_images/Bengali%20RAG%20API%20-%20Swagger%20UI.pdf).
 
 ## Output Sample
 ![1st Image](docs_and_images/output_sample_1.png)
