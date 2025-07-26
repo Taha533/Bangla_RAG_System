@@ -178,7 +178,7 @@ The FastAPI-based API is implemented in `rag_api.py` and provides endpoints for 
      ```json
      {
        "query": "string",
-       "expected_answer": "string" (optional)
+       "expected_answer": "string"
      }
      ```
    - **Response**:
@@ -187,22 +187,20 @@ The FastAPI-based API is implemented in `rag_api.py` and provides endpoints for 
        "query": "string",
        "answer": "string",
        "context": ["string"],
-       "expected_answer": "string" (if provided),
-       "cosine_similarity": float (if expected_answer provided)
+       "expected_answer": "string",
+       "cosine_similarity": float
      }
      ```
    - **Example**:
-     ```bash
-     curl -X POST "http://localhost:8000/query" -H "Content-Type: application/json" -d '{"query": "অনুপমের ভাষায় সুপুরুষ কাকে বলা হয়েছে?", "expected_answer": "শুম্ভুনাথ"}'
-     ```
-     **Response**:
+  
+     **Sample Response**:
      ```json
      {
        "query": "অনুপমের ভাষায় সুপুরুষ কাকে বলা হয়েছে?",
        "answer": "শুম্ভুনাথ",
        "context": ["[Doc 1]: ...", "[Doc 2]: ..."],
        "expected_answer": "শুম্ভুনাথ",
-       "cosine_similarity": 0.95
+       "cosine_similarity": 1.00
      }
      ```
 
@@ -250,7 +248,7 @@ The system evaluates responses using cosine similarity between the actual and ex
 | অনুপমের ভাষায় সুপুরুষ কাকে বলা হয়েছে? | শুম্ভুনাথ | শুম্ভুনাথকে বলা হয়েছে | 0.95 |
 | কাকে অনুপমের ভাগ্য দেবতা বলে উল্লেখ করা হয়েছে? | মামাকে | মামাকে | 1.00 | 
 | বিয়ের সময় কল্যাণীর প্রকৃত বয়স কত ছিল? | ১৫ বছর | খ) ১৫ বছর | 0.95 |
-|অনুপমের বাবা কী করে জীবিকা নির্বাহ করতেন? | ওকালতি বছর | ওকালতি | 1.00 |
+|অনুপমের বাবা কী করে জীবিকা নির্বাহ করতেন? | ওকালতি | ওকালতি | 1.00 |
 
 ## Required Questions
 
