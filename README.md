@@ -164,9 +164,9 @@ Below are sample queries and their outputs from the system:
 
 ### English Queries
 1. **Query**: Who is referred to as the "Supurush" in Anupam's language?  
-   **Output**: Shumbhunath  
+   **Output**: শুম্ভুনাথ  
 2. **Query**: What was Kalyani's actual age at the time of marriage?  
-   **Output**: 15 years  
+   **Output**: ১৫ বছর  
 
 ## API Documentation
 The FastAPI-based API is implemented in `rag_api.py` and provides endpoints for querying the RAG system.
