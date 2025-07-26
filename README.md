@@ -238,8 +238,8 @@ Then follow the steps provided in this
 [pdf](docs_and_images\Bengali%20RAG%20API%20-Swagger%20UI.pdf).
 
 ## Output Sample
-![1st Image](docs_and_images\output_sample_1.png)
-![2nd Image](docs_and_images\output_sample_2.png)
+![1st Image](docs_and_images/output_sample_1.png)
+![2nd Image](docs_and_images/output_sample_2.png)
 
 
 ## Evaluation Matrix
