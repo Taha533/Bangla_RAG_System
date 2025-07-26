@@ -1,6 +1,6 @@
 # Bangla RAG System
 
-This repository contains a Retrieval-Augmented Generation (RAG) system designed to process and answer queries in Bengali and English, based on the content of the "HSC26 Bangla 1st Paper" PDF document. The system extracts text from the PDF, chunks it, stores embeddings in a vector database, and uses a large language model (LLM) to generate contextually relevant answers. It includes a command-line inference script, a Streamlit web interface, and a FastAPI-based REST API.
+This repository contains a Retrieval-Augmented Generation (RAG) system designed to process and answer queries in Bangla and English, based on the content of the "HSC26 Bangla 1st Paper" PDF document. The system extracts text from the PDF, chunks it, stores embeddings in a vector database, and uses a large language model (LLM) to generate contextually relevant answers. It includes a command-line inference script, a Streamlit web interface, and a FastAPI-based REST API.
 ![Cover Image](docs_and_images/cover_img.png)
 ## Table of Contents
 - [Project Overview](#project-overview)
@@ -12,7 +12,7 @@ This repository contains a Retrieval-Augmented Generation (RAG) system designed 
 - [Required Questions](#required-questions)
 
 ## Project Overview
-The system fulfills the requirements of the AI Engineer (Level-1) Technical Assessment by implementing a multilingual RAG pipeline. It processes the provided PDF, supports Bengali and English queries, and retrieves relevant document chunks to generate accurate answers. The project includes:
+The system fulfills the requirements of the AI Engineer (Level-1) Technical Assessment by implementing a multilingual RAG pipeline. It processes the provided PDF, supports Bangla and English queries, and retrieves relevant document chunks to generate accurate answers. The project includes:
 - **bangla_rag_system.py**: Extracts text from the PDF, preprocesses it, chunks it, and creates a FAISS vector store.
 - **inference.py**: Provides a command-line interface for querying the RAG system.
 - **app.py**: Offers a Streamlit-based web interface with chat history and optional context display.
@@ -121,14 +121,13 @@ The system fulfills the requirements of the AI Engineer (Level-1) Technical Asse
 
 ## Tools, Libraries, and Packages
 - **Python Libraries**:
-  - `bangla_pdf_ocr`: For extracting Bengali text from PDFs.
+  - `bangla_pdf_ocr`: For extracting Bangla text from PDFs.
   - `langchain`, `langchain-community`, `langchain-groq`, `langchain-huggingface`: For building the RAG pipeline, integrating Groq LLM, and handling embeddings.
   - `faiss-cpu`: For efficient vector storage and similarity search.
   - `fastapi`, `uvicorn`: For creating and serving the REST API.
   - `streamlit`: For the web-based UI.
   - `python-dotenv`: For managing environment variables.
   - `numpy`: For cosine similarity calculations.
-  - `tenacity`: For retry logic in LLM initialization.
 - **Models**:
   - Embedding Model: `l3cube-pune/bengali-sentence-similarity-sbert` (HuggingFace).
   - LLM: `llama-3.3-70b-versatile` (Groq).
@@ -139,7 +138,7 @@ The system fulfills the requirements of the AI Engineer (Level-1) Technical Asse
 ## Sample Queries and Outputs
 Below are sample queries and their outputs from the system:
 
-### Bengali Queries
+### Bangla Queries
 1. **Query**: অনুপমের ভাষায় সুপুরুষ কাকে বলা হয়েছে?  
    **Output**: শুম্ভুনাথ  
 2. **Query**: কাকে অনুপমের ভাগ্য দেবতা বলে উল্লেখ করা হয়েছে?  
@@ -228,7 +227,7 @@ Then follow the steps provided in this
 ## Evaluation Matrix
 The system evaluates responses using cosine similarity between the actual and expected answer embeddings. Below is a sample evaluation matrix based on the test queries:
 
-| Query (Bengali) | Expected Answer | Actual Answer | Cosine Similarity |
+| Query | Expected Answer | Actual Answer | Cosine Similarity |
 |------------------------------------------|-----------------|----------------|-------------------|
 | অনুপমের ভাষায় সুপুরুষ কাকে বলা হয়েছে? | শুম্ভুনাথ | শুম্ভুনাথকে বলা হয়েছে | 0.95 |
 | কাকে অনুপমের ভাগ্য দেবতা বলে উল্লেখ করা হয়েছে? | মামাকে | মামাকে | 1.00 | 
@@ -238,13 +237,13 @@ The system evaluates responses using cosine similarity between the actual and ex
 ## Required Questions
 
 1. **What method or library did you use to extract the text, and why? Did you face any formatting challenges with the PDF content?**  
-   The `bangla_pdf_ocr` Python library was used to extract Bengali text from the `HSC26-Bangla1st-Paper.pdf` file. Initially, libraries like PyPDF2 and PyMuPDF (Fitz) were tested, but they produced garbled Bengali text. `bangla_pdf_ocr` was chosen because it accurately extracted proper Bengali text. The extracted text was cleaned using regex to remove excessive whitespace and encoded/decoded to handle any character errors, then saved to a text file for caching. No significant formatting challenges were encountered after switching to `bangla_pdf_ocr`, though minor cleaning was needed to normalize spacing.
+   The `bangla_pdf_ocr` Python library was used to extract Bangla text from the `HSC26-Bangla1st-Paper.pdf` file. Initially, libraries like PyPDF2 and PyMuPDF (Fitz) were tested, but they produced garbled Bangla text. `bangla_pdf_ocr` was chosen because it accurately extracted proper Bangla text. The extracted text was cleaned using regex to remove excessive whitespace and encoded/decoded to handle any character errors, then saved to a text file for caching. No significant formatting challenges were encountered after switching to `bangla_pdf_ocr`, though minor cleaning was needed to normalize spacing.
 
 2. **What chunking strategy did you choose (e.g., paragraph-based, sentence-based, character limit)? Why do you think it works well for semantic retrieval?**  
-   The chunking strategy used is a character-limit-based approach with the `RecursiveCharacterTextSplitter` from LangChain, configured with a chunk size of 1000 characters and an overlap of 200 characters. The splitter prioritizes natural separators like double newlines (`\n\n`), single newlines (`\n`), Bengali full stops (`।`), spaces, and empty strings to maintain semantic coherence. This strategy works well for semantic retrieval because it ensures chunks are small enough to capture specific information while the overlap preserves context across chunk boundaries. The use of Bengali-specific separators like `।` helps maintain sentence and paragraph integrity, improving the embedding model’s ability to capture meaningful text segments.
+   The chunking strategy used is a character-limit-based approach with the `RecursiveCharacterTextSplitter` from LangChain, configured with a chunk size of 1000 characters and an overlap of 200 characters. The splitter prioritizes natural separators like double newlines (`\n\n`), single newlines (`\n`), Bangla full stops (`।`), spaces, and empty strings to maintain semantic coherence. This strategy works well for semantic retrieval because it ensures chunks are small enough to capture specific information while the overlap preserves context across chunk boundaries. The use of Bangla-specific separators like `।` helps maintain sentence and paragraph integrity, improving the embedding model’s ability to capture meaningful text segments.
 
 3. **What embedding model did you use? Why did you choose it? How does it capture the meaning of the text?**  
-   The embedding model used is `l3cube-pune/bengali-sentence-similarity-sbert` from HuggingFace. It was chosen after testing other models like `csebuetnlp/banglabert`, `sagorsarker/bangla-bert-base`, and `mahedi420/Bangla-bert-improved-version`, which produced suboptimal responses. The `bengali-sentence-similarity-sbert` model is specifically fine-tuned for Bengali sentence similarity tasks, making it effective for capturing semantic meaning in Bengali text. It generates normalized embeddings that represent the contextual meaning of sentences, enabling accurate similarity comparisons between queries and document chunks.
+   The embedding model used is `l3cube-pune/bengali-sentence-similarity-sbert` from HuggingFace. It was chosen after testing other models like `csebuetnlp/banglabert`, `sagorsarker/bangla-bert-base`, and `mahedi420/Bangla-bert-improved-version`, which produced suboptimal responses. The `bengali-sentence-similarity-sbert` model is specifically fine-tuned for Bangla sentence similarity tasks, making it effective for capturing semantic meaning in Bangla text. It generates normalized embeddings that represent the contextual meaning of sentences, enabling accurate similarity comparisons between queries and document chunks.
 
 4. **How are you comparing the query with your stored chunks? Why did you choose this similarity method and storage setup?**  
    Queries are compared with stored chunks using cosine similarity in a FAISS vector database. FAISS was chosen over ChromaDB because it provided better performance and more accurate retrieval results during testing. Cosine similarity was selected as it effectively measures the semantic similarity between query and chunk embeddings, regardless of their magnitude. The FAISS storage setup is efficient for high-dimensional embeddings and supports fast similarity searches, making it suitable for the RAG system’s retrieval needs.
@@ -255,6 +254,6 @@ The system evaluates responses using cosine similarity between the actual and ex
 6. **Do the results seem relevant? If not, what might improve them (e.g., better chunking, better embedding model, larger document)?**  
    In most cases, the results are relevant, as evidenced by high cosine similarity scores (0.92–0.95) and correct answers for the sample queries. The system accurately retrieves contextually appropriate chunks and extracts precise answers. Potential improvements include:
    - **Better Chunking**: Reducing chunk size or using more advanced semantic chunking could improve granularity for very specific queries.
-   - **Better Embedding Model**: A more advanced Bengali-specific model, if available, could enhance semantic understanding.
+   - **Better Embedding Model**: A more advanced Bangla-specific model, if available, could enhance semantic understanding.
    - **Larger Document Corpus**: Including additional relevant documents could provide more context for broader queries.
    - **Query Preprocessing**: Adding query expansion or rephrasing for vague inputs could improve retrieval accuracy.
