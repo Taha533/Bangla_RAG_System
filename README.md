@@ -1,7 +1,7 @@
 # Bangla RAG System
 
 This repository contains a Retrieval-Augmented Generation (RAG) system designed to process and answer queries in Bengali and English, based on the content of the "HSC26 Bangla 1st Paper" PDF document. The system extracts text from the PDF, chunks it, stores embeddings in a vector database, and uses a large language model (LLM) to generate contextually relevant answers. It includes a command-line inference script, a Streamlit web interface, and a FastAPI-based REST API.
-![Cover Image](docs_and_images\cover_img.png)
+![Cover Image](docs_and_images/cover_img.png)
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Setup Guide](#setup-guide)
