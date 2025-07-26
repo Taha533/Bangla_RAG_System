@@ -49,8 +49,8 @@ The system fulfills the requirements of the AI Engineer (Level-1) Technical Asse
 ## Setup Guide
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/bengali-rag-system.git
-   cd bengali-rag-system
+   git clone https://github.com/Taha533/Bangla_RAG_System.git
+   cd Bangla_RAG_System
    ```
 
 2. **Install Dependencies**:
