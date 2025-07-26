@@ -54,7 +54,7 @@ The system fulfills the requirements of the AI Engineer (Level-1) Technical Asse
    ```
 
 2. **Install Dependencies**:
-   First, create a virtual environment with Python 3.11.13 to ensure compatibility with the project. Follow one of the methods below:
+   First, create a virtual environment with **Python 3.11.13** to ensure compatibility with the project. Follow one of the methods below:
 
    **Option 1: Using Python Virtual Environment**
    - Create a virtual environment (e.g., named `rag_10ms`):
