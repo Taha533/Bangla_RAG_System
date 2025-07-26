@@ -116,7 +116,7 @@ The system fulfills the requirements of the AI Engineer (Level-1) Technical Asse
      ```bash
      uvicorn rag_api:app --host 0.0.0.0 --port 8000
      ```
-      You will find brief explanation on how to run query on the API, on the [API Documentation](#api-documentation) section.
+      You will find a brief explanation on how to run a query in the [API Documentation](#api-documentation) section.
 
    When you see this message:
 
@@ -233,7 +233,7 @@ That means, your API is running. To check the API, go to this link:
 http://127.0.0.1:8000/docs
 
 Then follow the steps provided in this 
-[pdf](docs_and_images\Bengali%20RAG%20API%20-Swagger%20UI.pdf).
+[pdf](docs_and_images/Bengali%20RAG%20API%20-Swagger%20UI.pdf).
 
 ## Output Sample
 ![1st Image](docs_and_images/output_sample_1.png)
