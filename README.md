@@ -109,7 +109,7 @@ The system fulfills the requirements of the AI Engineer (Level-1) Technical Asse
      streamlit run app.py
      ```
    You will see this UI. Submit your queries there, to get your answer:
-   ![Alt text](docs_and_images\app_ui.PNG)
+   ![Alt text](docs_and_images/app_ui.PNG)
 
    - If you want to run the API to interact with the RAG system, then run this:
    
@@ -131,8 +131,8 @@ The system fulfills the requirements of the AI Engineer (Level-1) Technical Asse
 
    http://127.0.0.1:8000/docs
 
-   Then follow the steps provided in this 
-   [pdf](docs_and_images/Bengali%20RAG%20API%20-UI.pdf).
+   Then follow the steps provided in this
+   [PDF](docs_and_images/Bengali%20RAG%20API%20-%20Swagger%20UI.pdf).
 
 ## Tools, Libraries, and Packages
 - **Python Libraries**:
