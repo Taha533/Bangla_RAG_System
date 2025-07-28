@@ -75,8 +75,17 @@ The system fulfills the requirements of the AI Engineer (Level-1) Technical Asse
      uv pip install -r requirements.txt
      ```
 
-   **Option 2: Using Conda**
-   - If you have Conda installed, create the environment with all required dependencies using the provided `environment.yml` file:
+   **Option 2: Using Conda (Recommended)**
+   - Create a virtual environment with the required Python version
+     ```bash
+     conda create -n rag_10ms python=3.11.13
+     ```
+   - Then install required libraries
+     ```bash
+     uv pip install -r requirements.txt
+     ```
+   **Option 3: Using environment file**
+   - Or, you can just create the environment with all required dependencies using the provided `environment.yml` file:
      ```bash
      conda env create -f environment.yml
      ```
@@ -87,16 +96,16 @@ The system fulfills the requirements of the AI Engineer (Level-1) Technical Asse
 
    If the environment is created successfully with all necessary dependencies, you will be able to run the scripts without issues.
 
-3. **Set Environment Variables**:
+4. **Set Environment Variables**:
    Open the `.env` file in the root directory and add this: "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" as the Groq API key:
    ```
    GROQ_API_KEY="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"
    ```
 
-4. **Prepare Dataset**:
+5. **Prepare Dataset**:
    You will find the `HSC26-Bangla1st-Paper.pdf` file in the `dataset/` directory.
 
-5. **Run the Pipeline**:
+6. **Run the Pipeline**:
    - Build the vector store (you don't need to run this, since it has already been created):
      ```bash
      python bangla_rag_system.py
